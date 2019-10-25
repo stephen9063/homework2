@@ -7,14 +7,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class orderdetail extends AppCompatActivity {
+public class orderitemdetail extends AppCompatActivity {
     private TextView orderitemTextView;
     private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.order_detail);
+        setContentView(R.layout.activity_orderitemdetail);
 
         Intent intent = getIntent();
 

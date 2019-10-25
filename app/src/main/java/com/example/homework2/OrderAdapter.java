@@ -36,13 +36,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         final Order orderAtPosition = ordersToAdapt.get(position);
         holder.orderTextView.setText(orderAtPosition.getOrderitem());
         holder.itemImageView.setImageResource(orderAtPosition.getImageDrawableId());
+        holder.priceTextView.setText(orderAtPosition.getPrice());
 
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Context context = view.getContext();
 
-                Intent intent = new Intent(context, orderdetail.class);
+                Intent intent = new Intent(context, orderitemdetail.class);
                 intent.putExtra("OrderID", orderAtPosition.getOrderID());
                 context.startActivity(intent);
             }
@@ -74,14 +75,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.OrderViewHol
         public View view;
         public TextView orderTextView;
         public ImageView itemImageView;
-        public ImageView addbuttonView;
+        public TextView priceTextView;
+        //public ImageView addbuttonView;
 
         public OrderViewHolder(View v) {
             super(v);
             view = v;
             orderTextView = v.findViewById(R.id.orderitem);
             itemImageView = v.findViewById(R.id.orderPhoto);
-            addbuttonView = v.findViewById(R.id.addButton);
+            priceTextView = v.findViewById(R.id.price);
+            //addbuttonView = v.findViewById(R.id.addButton);
 
         }
     }

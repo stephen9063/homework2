@@ -8,10 +8,21 @@ public class Order {
 
     private int imageDrawableId;
 
-    public Order(int orderID, String orderitem, int imageDrawableId) {
+    private String price;
+
+    public Order(int orderID, String orderitem, int imageDrawableId, String price) {
         this.imageDrawableId = imageDrawableId;
         this.orderID = orderID;
         this.orderitem = orderitem;
+        this.price = price;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public int getOrderID() {
